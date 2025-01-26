@@ -4,7 +4,6 @@ You may not alter the values in the list's nodes, only nodes themselves may be c
 Input: head = [1,2,3,4,5], k = 2
 Output: [2,1,4,3,5]'''
 
-
 # METHOD 1
 # Definition for singly-linked list.
 # class ListNode(object):
