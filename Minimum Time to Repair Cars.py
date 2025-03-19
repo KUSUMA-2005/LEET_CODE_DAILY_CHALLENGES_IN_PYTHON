@@ -23,7 +23,32 @@ Explanation:
 It can be proved that the cars cannot be repaired in less than 16 minutes.​​​​​'''
 
 
+#code 1
+class Solution(object):
+    def repairCars(self, ranks, cars):
+        """
+        :type ranks: List[int]
+        :type cars: int
+        :rtype: int
+        """
+        l,r=1,max(ranks)*cars*cars
+        def is_valid(k):
+            total_cars=0
+            for r in ranks:
+                total_cars+=int(math.sqrt(float(k) / r))
+                if total_cars>=cars:
+                    return True
+            return False
+        while l<=r:
+            mid=l + (r - l) // 2
+            if is_valid(mid):
+                r=mid-1
+            else:
+                l=mid+1
+        return l
 
+
+#code 2
 class Solution(object):
     def repairCars(self, ranks, cars):
         """

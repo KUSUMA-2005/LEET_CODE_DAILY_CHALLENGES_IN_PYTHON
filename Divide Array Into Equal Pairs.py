@@ -18,3 +18,17 @@ Input: nums = [1,2,3,4]
 Output: false
 Explanation: 
 There is no way to divide nums into 4 / 2 = 2 pairs such that the pairs satisfy every condition.'''
+
+class Solution(object):
+    def divideArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        if len(nums)%2!=0:
+            return False
+        nums_dict=Counter(nums)
+        for num in nums_dict:
+            if nums_dict[num]%2!=0:
+                return False
+        return True
